@@ -3,22 +3,25 @@ const hyperx = require('hyperx')
 module.exports = template
 
 // render views
-function template (head, main) {
-  return function template (params, h, state) {
+function template (h, header, main, footer) {
+  return function template (params, state) {
     const hx = hyperx(h)
     return hx`
       <body>
-        <aside className="learn"></aside>
-        <section className="todoapp"></section>
-        ${footer(hx)}
+        <aside id="learn"></aside>
+        <section id="todoapp">
+          ${header(h)}
+        </section>
+        ${footerInfo(h)}
       </body>
     `
   }
 }
 
-function footer (hx) {
+function footerInfo (h) {
+  const hx = hyperx(h)
   return hx`
-    <footer className="info">
+    <footer id="info">
       <p>Double click to edit a todo</p>
       <p>
         Created by <a href="https://github.com/yoshuawuyts">yoshuawuyts</a>
