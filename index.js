@@ -4,9 +4,9 @@ const sheetRouter = require('sheet-router')
 const createApp = require('virtual-app')
 const vdom = require('virtual-dom')
 
-const modifyState = require('./state')
-const template = require('./template')
-const header = require('./header')
+const modifyState = require('./client-state')
+const template = require('./client-template')
+const header = require('./component-header')
 
 // initialize and attach
 const body = document.querySelector('body')
