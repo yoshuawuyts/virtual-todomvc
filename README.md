@@ -1,4 +1,4 @@
-# playground-virtual-app
+# virtual-todomvc
 Playing around with some `virtual-*` tech. Creates a minimal (`11Kb`) modern JS
 application that can be rendered on both client and server.
 
