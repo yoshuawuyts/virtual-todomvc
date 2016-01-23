@@ -7,6 +7,8 @@ const vdom = require('virtual-dom')
 const modifyState = require('./client-state')
 const template = require('./client-template')
 const header = require('./component-header')
+const footer = require('./component-footer')
+const todos = require('./component-todos')
 
 // initialize and attach
 const body = document.querySelector('body')
@@ -26,7 +28,7 @@ bridge(render, function (state) {
 function createRouter () {
   return sheetRouter('/', function (r, t) {
     return [
-      t('/', template(app.h, header(app.h))),
+      t('/', template(app.h, header(app.h), todos, footer)),
       t('/active', template(app.h, header(app.h))),
       t('/completed', template(app.h, header(app.h)))
     ]

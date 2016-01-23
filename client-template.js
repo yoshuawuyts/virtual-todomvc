@@ -11,6 +11,8 @@ function template (h, header, main, footer) {
         <aside id="learn"></aside>
         <section id="todoapp">
           ${header(h)}
+          ${main(h, state)}
+          ${footer(h, state)}
         </section>
         ${footerInfo(h)}
       </body>

@@ -14,6 +14,7 @@
   "dependencies": {
     "babelify": "^7.2.0",
     "hyperx": "^1.0.5",
+    "pathname-match": "^1.1.2",
     "sheet-router": "^1.1.0",
     "sheetify": "^3.3.3",
     "uglifyify": "^3.0.1",
