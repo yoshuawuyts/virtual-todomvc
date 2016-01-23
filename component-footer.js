@@ -9,10 +9,7 @@ function todos (h, state) {
   return hx`
     <footer id="footer">
       <span id="todo-count">
-        <strong>2</strong>
-        <span> </span>
-        <span>items</span>
-        <span>left</span>
+        ${createCount(hx, 2)}
       </span>
       <ul id="filters">
         ${createFilters(hx, [ 'all', 'active', 'completed' ])}
@@ -21,12 +18,24 @@ function todos (h, state) {
   `
 }
 
+// create the lil count phrase
+// (fn, num) -> obj
+function createCount (hx, count) {
+  const word = (count < 2 || !count) ? 'item' : 'items'
+  return hx`
+    <span>
+      <strong>${count}</strong> ${word} left
+    </span>
+  `
+}
+
 // create a list of filters
+// (fn, [str]) -> obj
 function createFilters (hx, filters) {
   return filters.map(function (filter) {
     return hx`
       <li>
-        <a href="#/${filter}">
+        <a href="#${filter}">
           ${filter.charAt(0).toUpperCase() + filter.slice(1)}
         </a>
         <span> </span>
